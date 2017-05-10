@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $courses = \App\Course::all();
+    return view('welcome',compact('courses'));
 });
+
+require __DIR__.'/Routes/Course.php';
